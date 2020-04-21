@@ -9,19 +9,22 @@ public class BubbleSort {
 		boolean is_sorted = true;
 		for(int i = 0 ; i < n  ; i++) {
 			
-			for(int j = 1 ; j < (n - i) ; j++ ) {
+			for(int j = 0 ; j < (n - i-1) ; j++ ) {
 				
-				if(int_array[j-1] > int_array[j]) {
+				if(int_array[j] > int_array[j+1]) {
 					
-					temp = int_array[j-1];
-					int_array[j-1] = int_array[j];
-					int_array[j] = temp;
+					temp = int_array[j];
+					int_array[j] = int_array[j+1];
+					int_array[j+1] = temp;
 					is_sorted = false;
 				}
 			}
 			
 			if(is_sorted) break;
-			System.out.println(int_array[i]);
 		}	
+		for (int i =0 ; i< n ; i++) {
+			System.out.println(int_array[i]);
+		}
+		System.out.println();
 	}
 }
